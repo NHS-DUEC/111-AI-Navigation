@@ -1,0 +1,42 @@
+{% set page = {
+  title: 'Prototype',
+  layout: {
+    back: false
+  },
+  links: {
+    title: 'Prototype quick links',
+    items: [
+      {
+        'text': 'Emergency Prescriptions',
+        'href': '/ep'
+      }
+    ]
+  }
+} %}
+
+{% extends page.layout.file | d(layouts.base) %}
+
+{% block content_primary %}
+
+  <h1 class="nhsuk-heading-l">
+    {{ page.title }}
+  </h1>
+
+  <p>Thank you for your time today</p>
+
+  {% for item in page.links.items %}
+    {% if loop.first %}
+      <ul class="nhsuk-list">
+    {% endif %}
+        <li><a href="{{ item.href }}">{{ item.text }}</a></li>
+    {% if loop.last %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+
+{% block footer %}
+  {% call appFooter() %}
+    <p><a href="/settings">Prototype settings</a></p>
+  {% endcall %}
+{% endblock footer %}

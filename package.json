@@ -1,0 +1,23 @@
+{
+  "name": "nhs-111-prototype-kit",
+  "description": "Rapidly create HTML prototypes of NHS websites and services.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node .",
+    "watch": "echo 'run this instead: npm start'"
+  },
+  "author": "https://github.com/nhsuk/",
+  "license": "MIT",
+  "dependencies": {
+    "he": "^1.2.0",
+    "highlight.js": "^11.11.1",
+    "html-format": "^1.1.7",
+    "mergician": "^2.0.2",
+    "nhsapp-frontend": "^5.0.3",
+    "nhsuk-frontend": "^10.3.1",
+    "nhsuk-prototype-kit": "^8.0.2"
+  },
+  "engines": {
+    "node": "^22.11.0 || ^24.11.0"
+  }
+}

@@ -1,0 +1,22 @@
+// ==========================================================================
+// COMPONENTS / #LIST-BORDER
+// ==========================================================================
+
+.nhsuk-list--border li {
+  border-bottom: 1px solid $color_nhsuk-grey-4;
+  padding: 8px 0 16px;
+}
+
+.app-do-dont-list--multiline {
+  li {
+    margin-bottom: nhsuk-spacing(4);
+  }
+}
+
+.app-list--spaced {
+  li {
+    &:not(:last-child) {
+      margin-bottom: nhsuk-spacing(3);
+    }
+  }
+}
