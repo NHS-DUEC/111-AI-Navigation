@@ -4,3 +4,319 @@
 // README: This file is for your custom styles for your
 // specific instance of the 111 Online Prototype Kit.
 // #########################################################
+
+.homepage-version-1 {
+
+  .app-hero {
+    &__content {
+      background-color: $color_nhsuk-blue;
+      color: #fff;
+      @include nhsuk-responsive-padding(4);
+      margin-bottom: nhsuk-spacing(4);
+    }
+    &__heading,
+    &__lede {
+      @include nhsuk-media-query($from: tablet) {
+        /* max-width: 90%; */
+      }
+    }
+    &__heading {
+      margin-bottom: nhsuk-spacing(2);
+      &__text {
+        margin: 0 0 nhsuk-spacing(3) 0;
+      }
+      &__caption {
+        color: #d2e2f1;
+        font-weight: bold;
+      }
+    }
+    &__lede {
+      margin: 0;
+    }
+  }
+
+  .app-prompt {
+    position: relative;
+    &__icon {
+      position: absolute;
+      top: 0em;
+      right: 0em;
+      width: 50px;
+      height: auto;
+      opacity: 0.2;
+    }
+  }
+
+  .app-hero--llm {
+    background: #003087 url(/assets/images/hero.jpg) no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    @include nhsuk-responsive-padding(5, "top");
+    @include nhsuk-responsive-padding(5, "bottom");
+
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(78, 120, 198, 0.05) 0%,
+        rgba(78, 120, 198, 0.3) 60%,
+        rgba(78, 120, 198, 0.55) 100%
+      );
+      content: "";
+      inset: 0;
+      position: absolute;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .nhsuk-textarea {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-color: rgba(0, 47, 92, 0.8);
+    }
+
+    .nhsuk-button {
+      margin-bottom: 0;
+    }
+  }
+
+  .app-list {
+    $root: ".app-list";
+    &--signpost {
+      #{$root}__link {
+        display: block;
+        padding: nhsuk-spacing(2) nhsuk-spacing(3);
+        background: $color_nhsuk-dark-blue;
+        color: $color_nhsuk-white;
+        text-decoration: none;
+      }
+    }
+    &--links {
+      #{$root}__item {
+        // @include nhsuk-responsive-margin(3, "bottom");
+        margin: 0;
+        @include nhsuk-responsive-padding(3, "top");
+        &:not(:last-child) {
+        @include nhsuk-responsive-padding(3, "bottom");
+        border-bottom: 1px solid $nhsuk-border-color;
+        }
+      }
+      #{$root}__link {
+        display: block;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .app-two-col {
+    display: block;
+  }
+
+  .app-two-col__col {
+    display: block;
+  }
+
+  .app-two-col__col + .app-two-col__col {
+    margin-top: nhsuk-spacing(4);
+  }
+
+  .app-two-col__panel {
+    background: #fff;
+    padding: nhsuk-spacing(4);
+  }
+
+  @include nhsuk-media-query($from: desktop) {
+    .app-two-col {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: nhsuk-spacing(4);
+      align-items: stretch;
+    }
+
+    .app-two-col__col {
+      display: flex;
+      min-width: 0;
+    }
+
+    .app-two-col__col + .app-two-col__col {
+      margin-top: 0;
+    }
+
+    .app-two-col__col:first-child {
+      flex: 0 0 60%;
+    }
+
+    .app-two-col__col:last-child {
+      flex: 1 1 auto;
+    }
+
+    .app-two-col__panel {
+      flex: 1 1 auto;
+    }
+  }
+
+}
+
+.homepage-version-2 {
+
+  .app-hero {
+    &__content {
+      background-color: $color_nhsuk-blue;
+      color: #fff;
+      @include nhsuk-responsive-padding(4);
+      margin-bottom: nhsuk-spacing(4);
+    }
+    &__heading,
+    &__lede {
+      @include nhsuk-media-query($from: tablet) {
+        /* max-width: 90%; */
+      }
+    }
+    &__heading {
+      margin-bottom: nhsuk-spacing(2);
+      &__text {
+        margin: 0 0 nhsuk-spacing(3) 0;
+      }
+      &__caption {
+        color: #d2e2f1;
+        font-weight: bold;
+      }
+    }
+    &__lede {
+      margin: 0;
+    }
+  }
+
+  .app-prompt {
+    position: relative;
+    &__icon {
+      position: absolute;
+      top: 0em;
+      right: 0em;
+      width: 50px;
+      height: auto;
+      opacity: 0.2;
+    }
+  }
+
+  .app-hero--llm {
+    background: #003087 url(/assets/images/hero.jpg) no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    @include nhsuk-responsive-padding(5, "top");
+    @include nhsuk-responsive-padding(5, "bottom");
+
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(78, 120, 198, 0.05) 0%,
+        rgba(78, 120, 198, 0.3) 60%,
+        rgba(78, 120, 198, 0.55) 100%
+      );
+      content: "";
+      inset: 0;
+      position: absolute;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .nhsuk-textarea {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-color: rgba(0, 47, 92, 0.8);
+    }
+
+    .nhsuk-button {
+      margin-bottom: 0;
+    }
+  }
+
+  .app-list {
+    $root: ".app-list";
+    &--signpost {
+      #{$root}__link {
+        display: block;
+        padding: nhsuk-spacing(2) nhsuk-spacing(3);
+        background: $color_nhsuk-dark-blue;
+        color: $color_nhsuk-white;
+        text-decoration: none;
+      }
+    }
+    &--links {
+      #{$root}__item {
+        // @include nhsuk-responsive-margin(3, "bottom");
+        margin: 0;
+        @include nhsuk-responsive-padding(3, "top");
+
+          @include nhsuk-responsive-padding(3, "bottom");
+          border-bottom: 1px solid $nhsuk-border-color;
+
+      }
+      #{$root}__link {
+        display: block;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .app-action-link {
+    &--multiline {
+      line-height: 1.2;
+    }
+  }
+
+  .app-two-col {
+    display: block;
+  }
+
+  .app-two-col__col {
+    display: block;
+  }
+
+  .app-two-col__col + .app-two-col__col {
+    margin-top: nhsuk-spacing(4);
+  }
+
+  .app-two-col__panel {
+    background: #fff;
+    padding: nhsuk-spacing(4);
+  }
+
+  @include nhsuk-media-query($from: desktop) {
+    .app-two-col {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: nhsuk-spacing(4);
+      align-items: stretch;
+    }
+
+    .app-two-col__col {
+      display: flex;
+      min-width: 0;
+    }
+
+    .app-two-col__col + .app-two-col__col {
+      margin-top: 0;
+    }
+
+    .app-two-col__col:first-child {
+      flex: 0 0 60%;
+    }
+
+    .app-two-col__col:last-child {
+      flex: 1 1 auto;
+    }
+
+    .app-two-col__panel {
+      flex: 1 1 auto;
+    }
+  }
+
+}

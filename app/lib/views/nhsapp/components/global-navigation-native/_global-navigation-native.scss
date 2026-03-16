@@ -1,6 +1,7 @@
 // ==========================================================================
 // COMPONENTS / #GLOBAL NAVIGATION NATIVE
 // ==========================================================================
+@use "nhsuk-frontend/dist/nhsuk" as *;
 
 .app-global-navigation-native {
   background-color: $color_nhsuk-grey-5;

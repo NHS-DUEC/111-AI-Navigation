@@ -1,4 +1,5 @@
 @charset "UTF-8"; /* stylelint-disable-line at-rule-no-unknown */
+@use "sass:meta";
 /* stylelint-disable color-no-hex */
 /* stylelint-enable color-no-hex */
 /* stylelint-disable string-quotes, order/properties-alphabetical-order */
@@ -27962,11 +27963,15 @@ dl dt {
 }
 
 // Import NHS.UK frontend library
-@import "nhsuk-frontend/dist/nhsuk";
+@include meta.load-css("nhsuk-frontend/dist/nhsuk");
 
 // The following components stolen from:
 // https://github.com/nhsuk/nhsapp-frontend/tree/main/docs/_includes/layouts/partials
 // as they are not in the nhsapp-frontend npm package
 // @import "../../views/nhsapp/components/bottom-nav-native/bottom-nav-native";
-@import "../../lib/views/nhsapp/components/bottom-navigation/bottom-navigation";
-@import "../../lib/views/nhsapp/components/global-navigation-native/global-navigation-native";
+@include meta.load-css(
+  "../../lib/views/nhsapp/components/bottom-navigation/bottom-navigation"
+);
+@include meta.load-css(
+  "../../lib/views/nhsapp/components/global-navigation-native/global-navigation-native"
+);
