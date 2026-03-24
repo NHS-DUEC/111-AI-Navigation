@@ -388,3 +388,19 @@
       }
     }
   }
+
+.app-inline-icon {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap: 1em;
+  line-height: 1;
+  @include nhsuk-responsive-margin(4, "top");
+  @include nhsuk-responsive-margin(4, "bottom");
+  &__icon {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    width: 3em;
+    min-width: 40px
+  }
+}
