@@ -9,9 +9,11 @@
 
   <div class="app-u-reading-width">
 
+    <a class="nhsuk-back-link nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4" href="./index">Back</a>
+
     <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-6">
       <span class="nhsuk-caption-l">NHS 111 online</span>
-      <span data-test-id="heading-text">Describe your problem</span>
+      <span data-test-id="heading-text">Tell us how we can help you today</span>
     </h1>
 
     {{ textarea({
@@ -19,15 +21,15 @@
       id: "example-right-size",
       rows: "3",
       label: {
-        text: "Tell us in a few words about your main symptom or problem",
-        classes: 'nhsuk-label--m nhsuk-u-margin-bottom-1'
+        text: "Describe your main symptom or problem in a few words",
+        classes: 'nhsuk-label--m nhsuk-u-margin-bottom-3'
       },
       hint: {
-        html: "For example:<br>I need a dentist,<br>I have a cough and high temperature,<br>I think I need an x-ray on my ankle,<br>I have run out of my prescribed medicine"
+        html: "For example:<br>I have a cough and high temperature<br>I think I need an x-ray on my ankle"
       }
     }) }}
 
-    <a role="button" href="#" class="nhsuk-button nhsuk-u-margin-top-3" data-module="nhsuk-button">Continue</a>
+    <a role="button" href="#" class="nhsuk-button nhsuk-u-margin-top-1" data-module="nhsuk-button">Continue</a>
 
     {% call insetText({
       classes: 'nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0'
@@ -40,7 +42,10 @@
             <path d="M20.3809 38.2754C20.6348 38.2754 20.8203 38.0898 20.8691 37.8262C21.5625 32.4844 22.3145 31.6641 27.6074 31.0781C27.8809 31.0488 28.0664 30.8535 28.0664 30.5898C28.0664 30.3359 27.8809 30.1406 27.6074 30.1113C22.3145 29.5254 21.5625 28.7051 20.8691 23.3535C20.8203 23.0898 20.6348 22.9141 20.3809 22.9141C20.127 22.9141 19.9414 23.0898 19.9023 23.3535C19.209 28.7051 18.4473 29.5254 13.1641 30.1113C12.8809 30.1406 12.6953 30.3359 12.6953 30.5898C12.6953 30.8535 12.8809 31.0488 13.1641 31.0781C18.4375 31.7715 19.1699 32.4844 19.9023 37.8262C19.9414 38.0898 20.127 38.2754 20.3809 38.2754Z" fill="#1D70B8"/>
           </svg>
         </span>
-        <p style="margin: 0;">This page uses Artificial Intelligence (AI) to suggest appropriate next steps based on your answer.</p>
+        <div>
+          <p style="margin: 0;">This page uses Artificial Intelligence (AI) to suggest appropriate next steps based on your answer.</p>
+          <p class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-0">You can also <a href="./index">go back and select what you need help with</a>.</p>
+        </div>
       </div>
     {% endcall %}
 
