@@ -1,0 +1,189 @@
+{% set page = {
+  title: 'Get help for your symptoms',
+  entrylinks: [
+    {
+      text: "help for my symptoms or injury",
+      url: '#'
+    },
+    {
+      text: "dental help",
+      url: '#'
+    },
+    {
+      text: "mental health help",
+      url: '#'
+    },
+    {
+      text: "sexual health help",
+      url: '#'
+    },
+    {
+      text: "a prescription or medicines information",
+      url: './guided-entry/medicines-help'
+    }
+  ],
+  layout: {
+    content_secondary: {
+      show: false
+    }
+  }
+}
+%}
+
+{% extends page.layout.file | d(layouts.base) %}
+
+{% block content_header %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-5">
+        <span class="nhsuk-caption-l">111 online</span>
+        <span data-test-id="heading-text">Get help for your symptoms</span>
+      </h1>
+      <p class="nhsuk-body-m">
+        If you think you need medical help right now,
+        111 online can tell you what to do next.
+      </p>
+      
+    </div>
+  </div>
+
+{% endblock content_header %}
+
+{% block content_primary %}
+
+  <h2 class="nhsuk-heading-l">I want to get:</h2>
+
+  {% set appSignage %}
+    {% for link in page.entrylinks %}
+      {% if loop.first %}
+      <ul class="app-signage">
+      {% endif %}
+        <li class="app-signage__item">
+          <a class="app-signage__link" href="{{ link.url | default('#') }}">
+            {{ link.text }}
+            <svg class="app-signage__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </a>
+        </li>
+      {% if loop.last %}
+      </ul>
+      {% endif %}
+    {% endfor %}
+  {% endset %}
+
+  {{ appSignage | safe }}
+
+  <h2 class="nhsuk-heading-l">Or you can:</h2>
+
+  <ul class="app-signage">
+    <li class="app-signage__item">
+      <a class="app-signage__link" href="./text-input">
+        <span style="display: grid; grid-template-columns: auto 1fr; column-gap: 12px; row-gap: 12px; align-items: center; padding-right: 20px;">
+          <svg width="24" height="28" viewBox="10 16 18.0664 22.2754" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: block; flex: 0 0 auto;">
+            <path d="M18.4863 20.7559C18.6133 20.7559 18.6816 20.6777 18.7012 20.5606C18.9941 18.9785 18.9648 18.9004 20.6641 18.5977C20.7812 18.5684 20.8594 18.5 20.8594 18.373C20.8594 18.2559 20.7812 18.1777 20.6641 18.1582C18.9648 17.8555 18.9941 17.7773 18.7012 16.1953C18.6816 16.0781 18.6133 16 18.4863 16C18.3594 16 18.291 16.0781 18.2715 16.1953C17.9785 17.7773 18.0078 17.8555 16.3086 18.1582C16.1816 18.1777 16.1133 18.2559 16.1133 18.373C16.1133 18.5 16.1816 18.5684 16.3086 18.5977C18.0078 18.9004 17.9785 18.9785 18.2715 20.5606C18.291 20.6777 18.3594 20.7559 18.4863 20.7559Z" fill="white"/>
+            <path d="M13.7598 27.4746C13.9453 27.4746 14.0723 27.3477 14.0918 27.1719C14.4434 24.5645 14.5312 24.5645 17.2266 24.0469C17.3926 24.0176 17.5195 23.9004 17.5195 23.7148C17.5195 23.5391 17.3926 23.4121 17.2266 23.3926C14.5312 23.0117 14.4336 22.9238 14.0918 20.2773C14.0723 20.0918 13.9453 19.9648 13.7598 19.9648C13.584 19.9648 13.457 20.0918 13.4277 20.2871C13.1152 22.8945 12.9688 22.8848 10.293 23.3926C10.127 23.4219 10 23.5391 10 23.7148C10 23.9102 10.127 24.0176 10.332 24.0469C12.9883 24.4766 13.1152 24.5449 13.4277 27.1523C13.457 27.3477 13.584 27.4746 13.7598 27.4746Z" fill="white"/>
+            <path d="M20.3809 38.2754C20.6348 38.2754 20.8203 38.0898 20.8691 37.8262C21.5625 32.4844 22.3145 31.6641 27.6074 31.0781C27.8809 31.0488 28.0664 30.8535 28.0664 30.5898C28.0664 30.3359 27.8809 30.1406 27.6074 30.1113C22.3145 29.5254 21.5625 28.7051 20.8691 23.3535C20.8203 23.0898 20.6348 22.9141 20.3809 22.9141C20.127 22.9141 19.9414 23.0898 19.9023 23.3535C19.209 28.7051 18.4473 29.5254 13.1641 30.1113C12.8809 30.1406 12.6953 30.3359 12.6953 30.5898C12.6953 30.8535 12.8809 31.0488 13.1641 31.0781C18.4375 31.7715 19.1699 32.4844 19.9023 37.8262C19.9414 38.0898 20.127 38.2754 20.3809 38.2754Z" fill="white"/>
+          </svg>
+          <span>Use AI to tell us how we can help you</span>
+          <strong class="nhsuk-tag nhsuk-tag--white nhsuk-tag--no-border" style="grid-column: 2; justify-self: start;">New</strong>
+        </span>
+        <svg class="app-signage__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+          <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+        </svg>
+      </a>
+    </li>
+  </ul>
+
+
+  <hr class="nhsuk-section-break nhsuk-section-break--visible nhsuk-u-margin-bottom-4">
+
+  <div class="nhsuk-expander-group">
+
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">Get help in the NHS App</span>
+      </summary>
+      <div class="nhsuk-details__text">
+
+        <p>You can get help for your symptoms from 111 online in the NHS App.</p>
+        <p>You can also:</p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>request GP appointments </li>
+          <li>manage hospital referrals </li>
+          <li>order repeat prescriptions</li>
+        </ul>
+
+        <div class="nhsuk-action-link nhsuk-u-margin-top-3r">
+          <a href="https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-use-111/?_id=111Website" class=" nhsuk-action-link__link">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text" data-test-id="action-link-text">Find out more about the NHS App</span>
+          </a>
+        </div>
+      </div>
+    </details>
+
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">See more NHS services</span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>Find out how to access a range of NHS services, such as:</p>
+        <ul>
+          <li>GP appointment booking</li>
+          <li>managing hospital referrals</li>
+          <li>COVID-19 vaccinations</li>
+        </ul>
+        <div class="nhsuk-action-link ">
+          <a href="https://www.nhs.uk/nhs-services/?_id=111Website" class=" nhsuk-action-link__link">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text" data-test-id="action-link-text">Find out about other NHS services on NHS.UK</span>
+          </a>
+        </div>
+      </div>
+    </details>
+
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary"><span class="nhsuk-details__summary-text">How 111 online works</span></summary>
+      <div class="nhsuk-details__text">
+        <p>111 online will not give you a diagnosis, but we will direct you to the best place to get help for your symptoms.</p>
+
+        <p>We cannot:</p>
+
+        <ul>
+          <li>issue <a href="https://www.nhs.uk/common-health-questions/caring-carers-and-long-term-conditions/when-do-i-need-a-fit-note/?_id=111Website">fit notes</a> - you need
+            to contact your GP surgery</li>
+          <li>make or cancel appointments for you in other parts of the NHS</li>
+        </ul>
+
+        <p>Read about <a href="https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-use-111/how-nhs-111-online-works/?_id=111Website" data-test-id="how-it-works">how 111 online works in detail</a></p>
+        <p>NHS 111 online is available in England only.</p>
+        <p>Get help in:</p>
+        <ul>
+          <li><a href="https://www.nidirect.gov.uk/campaigns/illnesses-and-conditions?_id=111Website">Northern Ireland</a></li>
+          <li><a href="https://www.nhs24.scot/?_id=111Website">Scotland</a></li>
+          <li><a href="https://111.wales.nhs.uk/?_id=111Website">Wales</a></li>
+        </ul>
+      </div>
+    </details>
+
+</div>
+
+{% endblock %}
+
+{% block content_secondary %}
+  <div class="app-feature-cta">
+    {{ button({
+      text: "Describe your symptoms",
+      classes: "nhsuk-button--secondary-solid nhsuk-u-width-full"
+    }) }}
+  </div>
+{% endblock content_secondary %}
