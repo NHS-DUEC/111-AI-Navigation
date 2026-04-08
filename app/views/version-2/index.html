@@ -57,7 +57,7 @@
   {% set appSignage %}
     {% for link in page.entrylinks %}
       {% if loop.first %}
-      <ul class="app-signage">
+      <ul class="app-signage" style="margin: 8px 0 4px;">
       {% endif %}
         <li class="app-signage__item">
           <a class="app-signage__link" href="{{ link.url | default('#') }}">
@@ -75,7 +75,7 @@
 
   {{ appSignage | safe }}
 
-  <h2 class="nhsuk-heading-l">Or you can:</h2>
+  <h2 class="nhsuk-heading-l1">Or you can:</h2>
 
   <ul class="app-signage">
     <li class="app-signage__item">
